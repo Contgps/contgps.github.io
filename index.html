@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Painel ContGPS</title>
+<style>
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#f5f5f2;color:#17225f;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
+.box{padding:24px;max-width:420px}
+a{color:#17225f}
+</style>
+</head>
+<body>
+<div class="box" id="msg">Abrindo o seu painel…</div>
+<script>
+(function(){
+  var APP='https://script.google.com/macros/s/AKfycby1FRgsbnpnqYf673IPQ3Oh4B21CbBR2kzmhf1bOFg4m1Ofx0UeLk4Rdvq4Lc71whUY/exec';
+  var p=new URLSearchParams(location.search), k=p.get('k')||location.hash.replace('#','');
+  if(/^[a-f0-9]{20}$/.test(k)){ location.replace(APP+'?k='+k); }
+  else { document.getElementById('msg').innerHTML='Link incompleto. Peça um novo link à ContGPS.'; }
+})();
+</script>
+</body>
+</html>
