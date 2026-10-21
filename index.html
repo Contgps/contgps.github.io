@@ -17,7 +17,7 @@ a{color:#17225f}
 (function(){
   var APP='https://script.google.com/macros/s/AKfycby1FRgsbnpnqYf673IPQ3Oh4B21CbBR2kzmhf1bOFg4m1Ofx0UeLk4Rdvq4Lc71whUY/exec';
   var p=new URLSearchParams(location.search), k=p.get('k')||location.hash.replace('#','');
-  if(/^[a-f0-9]{20}$/.test(k)){ location.replace(APP+'?k='+k); }
+  if(/^([a-f0-9]{20}|\d{6}_\d{1,5}_\d{6,8})$/.test(k)){ location.replace(APP+'?k='+k); }
   else { document.getElementById('msg').innerHTML='Link incompleto. Peça um novo link à ContGPS.'; }
 })();
 </script>
