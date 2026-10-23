@@ -19,9 +19,8 @@ a{color:#17225f}
   var q=location.search.replace(/^\?/,''), k='';
   if(q.indexOf('k=')===0){ try{ k=decodeURIComponent(q.slice(2)); }catch(e){ k=q.slice(2); } }
   if(!k) k=location.hash.replace('#','');
-  var m=k.match(/^(\d{6})_(\d{1,5})_ContGPS[&-]?[A-Za-z0-9]*_(\d{6,8})$/i);
-  if(m) k=m[1]+'_'+m[2]+'_'+m[3];
-  if(/^([a-f0-9]{20}|\d{6}_\d{1,5}_\d{6,8})$/.test(k)){ location.replace(APP+'?k='+k); }
+  var m=k.match(/^(\d{6})_(\d{1,5})_ContGPS-[A-Za-z0-9]+_(\d{6})$/);
+  if(m){ location.replace(APP+'?k='+m[1]+'_'+m[2]+'_'+m[3]); }
   else { document.getElementById('msg').innerHTML='Link incompleto. Peça um novo link à ContGPS.'; }
 })();
 </script>
